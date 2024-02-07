@@ -1,0 +1,39 @@
+---
+title: "Learning Tidy Models"
+author: "Tim Essam"
+format: html
+editor: visual
+---
+
+## Tidy Models
+
+Tidy models is a framework for running machine learning models. It consists of an ecosystem of modeling packages. This primer will cover the basics of the framework and some basic DS concepts.
+
+## Getting Started
+
+Load the tidymodels un
+
+```{r}
+library(tidymodels)
+```
+
+Testing and Training Data
+
+Training data is always set aside at the beginning as this is used to validate the model.
+
+use the `set.seed(42)` function to ensure that you get reproducible results. (If your seed setting drives your model performance, you likely have bigger issues w/ your model).
+
+Testing data can be divided up in numerous ways. Resampling the testing data is one way to divy up the testing data. You can also use cross-validation (randomly assign data to different folds), where you withhold some of the data. Say two-thirds of the data are used to train the data and one-third is used to test the data. Tidy models has a `vfold_cv()` function you can use to cross-validate your model.
+
+Say you have 100 data points, you can sample 10, run your model, then use the 2nd sample of n
+
+Bootstrapping - different way of making resamples. Take your original training set and draw with replacement until you get to N samples. Whatever is not picked goes into the assessment set. You can use the `bootstraps()` function to do this.
+
+Each method has different types of bias/variance trade-offs.
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
